@@ -1,0 +1,445 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-light: var(--success-light);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-light: var(--warning-light);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-danger-light: var(--danger-light);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-light: var(--info-light);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+}
+
+/* ── Light mode ──────────────────────────────────────────────────────── */
+:root {
+  --radius: 1rem;
+
+  /* Primary = near-black (reference action buttons) */
+  --primary: #17181D;
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #000000;
+  --primary-light: rgba(23,24,29,0.06);
+
+  /* Background gradient orbs (overridable per user) */
+  --bg-1: rgba(254,78,92,0.22);
+  --bg-2: rgba(255,186,138,0.20);
+  --bg-3: rgba(255,150,185,0.22);
+  --bg-4: rgba(140,200,160,0.18);
+
+  --background: #F1ECEC;
+  --foreground: #14151A;
+  --card: rgba(255,255,255,0.48);
+  --card-foreground: #14151A;
+  --popover: rgba(255,255,255,0.85);
+  --popover-foreground: #14151A;
+  --secondary: rgba(20,21,26,0.05);
+  --secondary-foreground: #3A3B42;
+  --muted: rgba(20,21,26,0.04);
+  --muted-foreground: #71727B;
+  --accent: rgba(20,21,26,0.06);
+  --accent-foreground: #14151A;
+  --destructive: #E5484D;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(20,21,26,0.07);
+  --border-strong: rgba(20,21,26,0.14);
+  --input: rgba(20,21,26,0.10);
+  --ring: #17181D;
+
+  --text-primary: #14151A;
+  --text-secondary: #6A6B73;
+  --text-tertiary: #9C9DA6;
+
+  --success: #12A150;
+  --success-foreground: #FFFFFF;
+  --success-light: rgba(18,161,80,0.12);
+  --warning: #D9880A;
+  --warning-foreground: #FFFFFF;
+  --warning-light: rgba(217,136,10,0.12);
+  --danger: #E5484D;
+  --danger-foreground: #FFFFFF;
+  --danger-light: rgba(229,72,77,0.11);
+  --info: #3061F2;
+  --info-foreground: #FFFFFF;
+  --info-light: rgba(48,97,242,0.11);
+
+  --sidebar: rgba(255,255,255,0.42);
+  --sidebar-foreground: #14151A;
+  --sidebar-border: rgba(255,255,255,0.45);
+  --sidebar-accent: rgba(20,21,26,0.06);
+  --sidebar-accent-foreground: #14151A;
+}
+
+/* ── Dark mode ───────────────────────────────────────────────────────── */
+.dark {
+  /* Primary = near-white (inverted action buttons) */
+  --primary: #F1F2F5;
+  --primary-foreground: #16171C;
+  --primary-hover: #FFFFFF;
+  --primary-light: rgba(255,255,255,0.08);
+
+  --bg-1: rgba(254,90,105,0.26);
+  --bg-2: rgba(255,170,110,0.18);
+  --bg-3: rgba(255,130,175,0.22);
+  --bg-4: rgba(90,190,130,0.18);
+
+  --background: #0A0C12;
+  --foreground: #EDEFF3;
+  --card: rgba(255,255,255,0.07);
+  --card-foreground: #EDEFF3;
+  --popover: rgba(20,23,32,0.86);
+  --popover-foreground: #EDEFF3;
+  --secondary: rgba(255,255,255,0.06);
+  --secondary-foreground: #DDE1E8;
+  --muted: rgba(255,255,255,0.05);
+  --muted-foreground: #A9B0BC;
+  --accent: rgba(255,255,255,0.08);
+  --accent-foreground: #EDEFF3;
+  --destructive: #F0555F;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255,255,255,0.09);
+  --border-strong: rgba(255,255,255,0.16);
+  --input: rgba(255,255,255,0.12);
+  --ring: #F1F2F5;
+
+  --text-primary: #EDEFF3;
+  --text-secondary: #B4BAC5;
+  --text-tertiary: #828997;
+
+  --success: #3FD07E;
+  --success-foreground: #0A2A18;
+  --success-light: rgba(63,208,126,0.14);
+  --warning: #E0A626;
+  --warning-foreground: #2A1E05;
+  --warning-light: rgba(224,166,38,0.14);
+  --danger: #F0555F;
+  --danger-foreground: #FFFFFF;
+  --danger-light: rgba(240,85,95,0.15);
+  --info: #6C8CFF;
+  --info-foreground: #FFFFFF;
+  --info-light: rgba(108,140,255,0.15);
+
+  --sidebar: rgba(18,21,28,0.42);
+  --sidebar-foreground: #EDEFF3;
+  --sidebar-border: rgba(255,255,255,0.09);
+  --sidebar-accent: rgba(255,255,255,0.07);
+  --sidebar-accent-foreground: #EDEFF3;
+}
+
+/* ── Global base ─────────────────────────────────────────────────────── */
+@layer base {
+  * { border-color: var(--color-border); }
+
+  html, body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    line-height: 1.55;
+    min-height: 100vh;
+  }
+
+  /* Colour orbs the frosted glass blurs against — driven by --bg-1..4 so the
+     background theme is user-selectable (see src/lib/background.ts). */
+  body {
+    background-color: #F1ECEC;
+    background-image:
+      radial-gradient(ellipse 60% 55% at 90% 8%,   var(--bg-1) 0%, transparent 60%),
+      radial-gradient(ellipse 58% 54% at 8% 10%,   var(--bg-2) 0%, transparent 58%),
+      radial-gradient(ellipse 64% 60% at 12% 90%,  var(--bg-3) 0%, transparent 60%),
+      radial-gradient(ellipse 66% 60% at 92% 92%,  var(--bg-4) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+
+  /* Dark canvas — the --bg-* vars are redefined under .dark, so the gradient
+     above automatically uses the darker hues. */
+  .dark body {
+    background-color: #0D0A0C;
+  }
+
+  h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.011em; }
+  table { font-size: 14px; }
+
+  /* Calmer, thinner scrollbars */
+  * { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 3px solid transparent; background-clip: content-box; }
+  *::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); background-clip: content-box; }
+
+  /* Toast close button: always visible (sonner hides it until hover by default) */
+  [data-sonner-toast] [data-close-button] {
+    opacity: 1 !important;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+}
+
+/* ── Surface & elevation utilities — soft glass fintech ─────────────────── */
+@layer utilities {
+
+  /* Frosted glass backdrop blur — the heart of the look */
+  .glass {
+    backdrop-filter: blur(24px) saturate(1.9);
+    -webkit-backdrop-filter: blur(24px) saturate(1.9);
+  }
+  .glass-strong {
+    backdrop-filter: blur(40px) saturate(2);
+    -webkit-backdrop-filter: blur(40px) saturate(2);
+  }
+
+  /* Glass card: bright frosted rim + inner highlight + soft depth */
+  .card-elevated {
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.20),
+      0 1px 2px rgba(16, 24, 40, 0.05),
+      0 12px 40px rgba(31, 38, 82, 0.14);
+  }
+  .dark .card-elevated {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.35),
+      0 16px 44px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Popover / menu elevation — a clean, soft drop shadow */
+  .card-raised {
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+  .dark .card-raised {
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.50),
+      0 2px 6px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Interactive card: border sharpens + a small lift on hover only */
+  .card-hover {
+    transition: box-shadow 0.16s ease, border-color 0.16s ease;
+  }
+  .card-hover:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  .dark .card-hover:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* ── Login scene (immersive branded sign-in) ───────────────────────────── */
+.login-scene {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(120% 120% at 50% -20%, #FFF6F3 0%, #F5ECEC 45%, #EFE7EC 100%);
+}
+.dark .login-scene {
+  background:
+    radial-gradient(120% 120% at 50% -20%, #1a1016 0%, #120c12 55%, #0a070b 100%);
+}
+
+/* Drifting colour orbs behind the frosted glass */
+.login-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: login-orb-drift 20s ease-in-out infinite;
+  will-change: transform;
+}
+.dark .login-orb { opacity: 0.42; }
+@keyframes login-orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(44px, -34px) scale(1.12); }
+  66%      { transform: translate(-32px, 28px) scale(0.94); }
+}
+
+/* Falling petals */
+.login-petal {
+  position: absolute;
+  top: -8vh;
+  border-radius: 0 100% 0 100%;
+  opacity: 0;
+  animation-name: login-petal-fall;
+  animation-timing-function: cubic-bezier(.45,.05,.55,.95);
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+  box-shadow: inset 0 0 6px rgba(255,255,255,0.35);
+}
+@keyframes login-petal-fall {
+  0%   { transform: translateY(-8vh) translateX(0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 0.85; }
+  92%  { opacity: 0.8; }
+  100% { transform: translateY(112vh) translateX(var(--drift, 40px)) rotate(420deg); opacity: 0; }
+}
+
+/* Living gradient border around the card — only the 1.5px rim shows (masked),
+   and the conic angle flows so the colours travel around the edge. */
+@property --login-a {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.login-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  padding: 1.5px;
+  background: conic-gradient(from var(--login-a), #FE4E5C, #FFBA8A, #FF96B9, #8CC8A0, #FEC89A, #FE4E5C);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: login-ring-flow 8s linear infinite;
+  z-index: 20;
+  pointer-events: none;
+}
+@keyframes login-ring-flow { to { --login-a: 360deg; } }
+
+/* Logo bloom + soft breathing glow */
+.login-logo-anim { animation: login-logo-bloom 1.05s cubic-bezier(.2,.85,.25,1) both; }
+@keyframes login-logo-bloom {
+  0%   { opacity: 0; transform: scale(.55) rotate(-10deg); }
+  60%  { opacity: 1; }
+  100% { opacity: 1; transform: none; }
+}
+.login-glow { animation: login-glow-pulse 4.5s ease-in-out infinite; }
+@keyframes login-glow-pulse { 0%,100% { opacity: .45; } 50% { opacity: .9; } }
+
+/* Staggered entrance for card contents */
+.login-fade { animation: login-fade-up .75s cubic-bezier(.2,.7,.2,1) both; }
+.login-d1 { animation-delay: .10s; }
+.login-d2 { animation-delay: .20s; }
+.login-d3 { animation-delay: .30s; }
+.login-d4 { animation-delay: .40s; }
+.login-card-enter { animation: login-card-in .8s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes login-fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes login-card-in { from { opacity: 0; transform: translateY(28px) scale(.97); } to { opacity: 1; transform: none; } }
+
+/* Shimmer sweep on the submit button */
+.login-shimmer { position: relative; overflow: hidden; }
+.login-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 45%;
+  transform: translateX(-160%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: login-shimmer-sweep 3s ease-in-out infinite;
+}
+@keyframes login-shimmer-sweep { 0% { transform: translateX(-160%); } 60%, 100% { transform: translateX(320%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .login-orb, .login-petal, .login-ring, .login-glow,
+  .login-logo-anim, .login-fade, .login-card-enter, .login-shimmer::after {
+    animation: none !important;
+  }
+  .login-fade, .login-card-enter { opacity: 1 !important; transform: none !important; }
+}
+
+/* Glossy 3D brand orb on the login hero panel */
+.login-orb-hero {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 27%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 20%),
+    radial-gradient(circle at 52% 48%, #ffd6e8 0%, #ff8fc0 20%, #FE4E5C 56%, #a2385c 100%);
+  box-shadow:
+    inset -16px -22px 46px rgba(120,20,60,0.38),
+    inset 14px 16px 34px rgba(255,255,255,0.35),
+    0 34px 70px rgba(254,78,92,0.45);
+  animation: login-orb-drift 12s ease-in-out infinite;
+}
+
+/* Partner-portal variant of the glossy orb (violet / teal) */
+.login-orb-hero-partner {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 27%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0) 20%),
+    radial-gradient(circle at 52% 48%, #d9e6ff 0%, #9fb4ff 20%, #6D5AE6 56%, #2f5a86 100%);
+  box-shadow:
+    inset -16px -22px 46px rgba(30,26,90,0.42),
+    inset 14px 16px 34px rgba(255,255,255,0.35),
+    0 34px 70px rgba(109,90,230,0.45);
+  animation: login-orb-drift 12s ease-in-out infinite;
+}
+
+/* Non-fixed canvas background for the login form pane (theme-aware) */
+.login-pane-bg {
+  background: radial-gradient(130% 130% at 50% -10%, #FFF6F3 0%, #F5ECEC 45%, #EFE7EC 100%);
+}
+.dark .login-pane-bg {
+  background: radial-gradient(130% 130% at 50% -10%, #1a1016 0%, #120c12 55%, #0a070b 100%);
+}
+
+/* ── Login: grainy-gradient + glass aesthetic ─────────────────────────── */
+/* Fine film grain laid over the gradient for texture */
+.login-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+  opacity: 0.32;
+  mix-blend-mode: soft-light;
+}
+
+/* Animated floral bloom (replaces the orb) */
+.bloom-spin { transform-origin: 100px 100px; animation: bloom-spin 52s linear infinite; }
+.bloom-spin-rev { transform-origin: 100px 100px; animation: bloom-spin 68s linear infinite reverse; }
+@keyframes bloom-spin { to { transform: rotate(360deg); } }
+.bloom-breathe { transform-origin: 100px 100px; animation: bloom-breathe 9s ease-in-out infinite; }
+@keyframes bloom-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .bloom-spin, .bloom-spin-rev, .bloom-breathe { animation: none !important; }
+}

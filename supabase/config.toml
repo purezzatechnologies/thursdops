@@ -1,0 +1,8 @@
+project_id = "cvhsmvynxprnkhumquim"
+
+# Local development stack tuning.
+# Analytics (Logflare) + its Vector sidecar are heavy and optional; disabling
+# them avoids health-check failures on lightweight local runtimes (Colima).
+# This only affects the LOCAL stack, not any deployed/hosted Supabase project.
+[analytics]
+enabled = false

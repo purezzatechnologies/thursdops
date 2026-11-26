@@ -1,0 +1,13 @@
+node_modules
+.env
+.DS_Store
+dist
+.output
+.wrangler
+.dev.vars
+
+# Supabase CLI local state
+supabase/.temp
+
+# Claude Code local config
+.claude/

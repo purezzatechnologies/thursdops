@@ -1,0 +1,2 @@
+ALTER TABLE public.tasks ADD COLUMN IF NOT EXISTS copied_from_task_id uuid REFERENCES public.tasks(id) ON DELETE SET NULL;
+CREATE INDEX IF NOT EXISTS tasks_copied_from_idx ON public.tasks (copied_from_task_id);
